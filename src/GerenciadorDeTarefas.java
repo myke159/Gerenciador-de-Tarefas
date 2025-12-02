@@ -49,7 +49,7 @@ public class GerenciadorDeTarefas {
                 // Adicionar Tarefa
                 case 1:
                     System.out.print("Nome da Tarefa para adicionar: ");
-                    entrada = join.nextLine();
+                    entrada = join.nextLine().toLowerCase();
 
 
                     if (!tarefasPendentes.contains(entrada)) {
@@ -73,12 +73,12 @@ public class GerenciadorDeTarefas {
                         }
 
                         System.out.print("Nome da Tarefa para editar: ");
-                        entrada = join.nextLine();;
+                        entrada = join.nextLine().toLowerCase();;
 
                         if (tarefasPendentes.contains(entrada)) {
 
                             System.out.print("Novo nome da tarefa: ");
-                            String novaEntrada = join.nextLine();
+                            String novaEntrada = join.nextLine().toLowerCase();
                             int pos = tarefasPendentes.indexOf(entrada);
                             tarefasPendentes.set(pos, novaEntrada);
                             System.out.println("Editado com sucesso!");
@@ -100,7 +100,7 @@ public class GerenciadorDeTarefas {
                     System.out.println("1. Tarefas Pendentes");
                     System.out.println("2. Tarefas Concluidas");
                     System.out.print("Escolha: ");
-                    entrada = join.nextLine();;
+                    entrada = join.nextLine();
 
                     if (entrada.equals("1")) {
                         if (!tarefasPendentes.isEmpty()) {
@@ -131,8 +131,9 @@ public class GerenciadorDeTarefas {
                     System.out.println("1. Tarefas Pendentes");
                     System.out.println("2. Tarefas Concluidas");
                     System.out.print("Escolha: ");
-                    entrada = join.nextLine();;
+                    entrada = join.nextLine();
 
+                    // Excluir tarefas - Tarefas Pendentes
                     if (entrada.equals("1")) {
 
                         if (!tarefasPendentes.isEmpty()){
@@ -141,7 +142,7 @@ public class GerenciadorDeTarefas {
                                 System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
                             }
                             System.out.print("Nome para excluir: ");
-                            entrada = join.nextLine();;
+                            entrada = join.nextLine().toLowerCase();
 
                             if (tarefasPendentes.contains(entrada)) {
 
@@ -156,8 +157,7 @@ public class GerenciadorDeTarefas {
                             System.out.println("Lista VAZIA!");
                         }
 
-
-
+                    // Excluir tarefas - Tarefas Concluidas
                     } else if (entrada.equals("2")) {
 
                         if (!tarefasConcluidas.isEmpty()) {
@@ -166,7 +166,7 @@ public class GerenciadorDeTarefas {
                                 System.out.printf("%dº %s\n", i+1, tarefasConcluidas.get(i));
                             }
                             System.out.print("Nome para excluir: ");
-                            entrada = join.nextLine();;
+                            entrada = join.nextLine().toLowerCase();
 
                             if (tarefasConcluidas.contains(entrada)) {
 
@@ -184,8 +184,6 @@ public class GerenciadorDeTarefas {
 
 
                     }
-
-
                     break;
 
                 // Concluir
@@ -197,7 +195,7 @@ public class GerenciadorDeTarefas {
                             System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
                         }
                         System.out.print("Nome da Tarefa para Concluir: ");
-                        entrada = join.nextLine();;
+                        entrada = join.nextLine().toLowerCase();
                         if (tarefasPendentes.contains(entrada)) {
 
                             System.out.printf("Selecionado: %S\n", entrada);
@@ -220,8 +218,6 @@ public class GerenciadorDeTarefas {
                     } else {
                         System.out.println("Lista VAZIA!");
                     }
-
-
                     break;
 
 

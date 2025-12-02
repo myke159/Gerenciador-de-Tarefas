@@ -73,12 +73,12 @@ public class GerenciadorDeTarefas {
                         }
 
                         System.out.print("Nome da Tarefa para editar: ");
-                        entrada = join.next();
+                        entrada = join.nextLine();;
 
                         if (tarefasPendentes.contains(entrada)) {
 
                             System.out.print("Novo nome da tarefa: ");
-                            String novaEntrada = join.next();
+                            String novaEntrada = join.nextLine();
                             int pos = tarefasPendentes.indexOf(entrada);
                             tarefasPendentes.set(pos, novaEntrada);
                             System.out.println("Editado com sucesso!");
@@ -100,7 +100,7 @@ public class GerenciadorDeTarefas {
                     System.out.println("1. Tarefas Pendentes");
                     System.out.println("2. Tarefas Concluidas");
                     System.out.print("Escolha: ");
-                    entrada = join.next();
+                    entrada = join.nextLine();;
 
                     if (entrada.equals("1")) {
                         if (!tarefasPendentes.isEmpty()) {
@@ -131,7 +131,7 @@ public class GerenciadorDeTarefas {
                     System.out.println("1. Tarefas Pendentes");
                     System.out.println("2. Tarefas Concluidas");
                     System.out.print("Escolha: ");
-                    entrada = join.next();
+                    entrada = join.nextLine();;
 
                     if (entrada.equals("1")) {
 
@@ -140,7 +140,7 @@ public class GerenciadorDeTarefas {
                             System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
                         }
                         System.out.print("Nome para excluir: ");
-                        entrada = join.next();
+                        entrada = join.nextLine();;
 
                         if (tarefasPendentes.contains(entrada)) {
 
@@ -159,7 +159,7 @@ public class GerenciadorDeTarefas {
                             System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
                         }
                         System.out.print("Nome para excluir: ");
-                        entrada = join.next();
+                        entrada = join.nextLine();;
 
                         if (tarefasConcluidas.contains(entrada)) {
 
@@ -185,7 +185,7 @@ public class GerenciadorDeTarefas {
                             System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
                         }
                         System.out.print("Nome da Tarefa para Concluir: ");
-                        entrada = join.next();
+                        entrada = join.nextLine();;
                         if (tarefasPendentes.contains(entrada)) {
 
                             System.out.printf("Selecionado: %S\n", entrada);

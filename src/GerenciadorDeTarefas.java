@@ -162,8 +162,8 @@ public class GerenciadorDeTarefas {
 
                         if (!tarefasConcluidas.isEmpty()) {
                             System.out.println("-- Lista das Tarefas Concluidas --");
-                            for (int i = 0; i < tarefasPendentes.size(); i++){
-                                System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
+                            for (int i = 0; i < tarefasConcluidas.size(); i++){
+                                System.out.printf("%dº %s\n", i+1, tarefasConcluidas.get(i));
                             }
                             System.out.print("Nome para excluir: ");
                             entrada = join.nextLine();;

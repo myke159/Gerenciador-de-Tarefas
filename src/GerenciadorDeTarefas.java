@@ -23,6 +23,7 @@ public class GerenciadorDeTarefas {
         ArrayList<String> tarefasConcluidas = new ArrayList<>(Arrays.asList());
         int opc = 0;
         String entrada;
+        String confirmar;
 
 
         /*
@@ -146,8 +147,16 @@ public class GerenciadorDeTarefas {
 
                             if (tarefasPendentes.contains(entrada)) {
 
-                                tarefasPendentes.remove(entrada);
-                                System.out.println("Tarefa Excluida com sucesso.");
+                                System.out.printf("Selecionado: %S\n", entrada);
+                                System.out.print("Deseja Excluir a tarefa?[S] ou [N]: ");
+                                confirmar = join.next().toLowerCase();
+
+                                if (confirmar.equals("s")) {
+                                    tarefasPendentes.remove(entrada);
+                                    System.out.println("Tarefa Excluida com sucesso.");
+                                } else {
+                                    System.out.println("Operação Cancelada");
+                                }
 
                             } else {
                                 System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
@@ -170,8 +179,16 @@ public class GerenciadorDeTarefas {
 
                             if (tarefasConcluidas.contains(entrada)) {
 
-                                tarefasConcluidas.remove(entrada);
-                                System.out.println("Tarefa Excluida com sucesso.");
+                                System.out.printf("Selecionado: %S\n", entrada);
+                                System.out.print("Deseja Excluir a tarefa?[S] ou [N]: ");
+                                confirmar = join.next().toLowerCase();
+
+                                if (confirmar.equals("s")) {
+                                    tarefasConcluidas.remove(entrada);
+                                    System.out.println("Tarefa Excluida com sucesso.");
+                                } else {
+                                    System.out.println("Operação Cancelada");
+                                }
 
                             } else {
                                 System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
@@ -200,7 +217,7 @@ public class GerenciadorDeTarefas {
 
                             System.out.printf("Selecionado: %S\n", entrada);
                             System.out.print("Deseja Concluir a tarefa?[S] ou [N]: ");
-                            String confirmar = join.next().toLowerCase();
+                            confirmar = join.next().toLowerCase();
 
                             if (confirmar.equals("s")) {
                                 tarefasPendentes.remove(entrada);

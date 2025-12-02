@@ -135,41 +135,53 @@ public class GerenciadorDeTarefas {
 
                     if (entrada.equals("1")) {
 
-                        System.out.println("-- Lista das Tarefas Pendentes --");
-                        for (int i = 0; i < tarefasPendentes.size(); i++){
-                            System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
-                        }
-                        System.out.print("Nome para excluir: ");
-                        entrada = join.nextLine();;
+                        if (!tarefasPendentes.isEmpty()){
+                            System.out.println("-- Lista das Tarefas Pendentes --");
+                            for (int i = 0; i < tarefasPendentes.size(); i++){
+                                System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
+                            }
+                            System.out.print("Nome para excluir: ");
+                            entrada = join.nextLine();;
 
-                        if (tarefasPendentes.contains(entrada)) {
+                            if (tarefasPendentes.contains(entrada)) {
 
-                            tarefasPendentes.remove(entrada);
-                            System.out.println("Tarefa Excluida com sucesso.");
+                                tarefasPendentes.remove(entrada);
+                                System.out.println("Tarefa Excluida com sucesso.");
 
+                            } else {
+                                System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
+
+                            }
                         } else {
-                            System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
-
+                            System.out.println("Lista VAZIA!");
                         }
+
+
 
                     } else if (entrada.equals("2")) {
 
-                        System.out.println("-- Lista das Tarefas Concluidas --");
-                        for (int i = 0; i < tarefasPendentes.size(); i++){
-                            System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
-                        }
-                        System.out.print("Nome para excluir: ");
-                        entrada = join.nextLine();;
+                        if (!tarefasConcluidas.isEmpty()) {
+                            System.out.println("-- Lista das Tarefas Concluidas --");
+                            for (int i = 0; i < tarefasPendentes.size(); i++){
+                                System.out.printf("%dº %s\n", i+1, tarefasPendentes.get(i));
+                            }
+                            System.out.print("Nome para excluir: ");
+                            entrada = join.nextLine();;
 
-                        if (tarefasConcluidas.contains(entrada)) {
+                            if (tarefasConcluidas.contains(entrada)) {
 
-                            tarefasConcluidas.remove(entrada);
-                            System.out.println("Tarefa Excluida com sucesso.");
+                                tarefasConcluidas.remove(entrada);
+                                System.out.println("Tarefa Excluida com sucesso.");
 
+                            } else {
+                                System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
+
+                            }
                         } else {
-                            System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
-
+                            System.out.println("Lista VAZIA!");
                         }
+
+
 
                     }
 

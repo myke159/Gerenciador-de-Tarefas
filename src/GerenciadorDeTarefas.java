@@ -86,11 +86,14 @@ public class GerenciadorDeTarefas {
                             System.out.println("Editado com sucesso!");
 
                         // Editar - ID
-                        } else if (!Boolean.parseBoolean(tarefasPendentes.get(entradaNum))){
-                            System.out.print("Novo nome da tarefa: ");
-                            String novaEntrada = join.nextLine().toLowerCase();
-                            tarefasPendentes.set(entradaNum, novaEntrada);
-                            System.out.println("Editado com sucesso!");
+                            // TODO: Melhorar a tratativa do !Boolean.parseBoolean(tarefasPendentes.get(entradaNum))
+                        } else if (tarefasPendentes.size() > entradaNum){
+                            if (!Boolean.parseBoolean(tarefasPendentes.get(entradaNum))) {
+                                System.out.print("Novo nome da tarefa: ");
+                                String novaEntrada = join.nextLine().toLowerCase();
+                                tarefasPendentes.set(entradaNum, novaEntrada);
+                                System.out.println("Editado com sucesso!");
+                            }
                         } else {
                             System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
                         }

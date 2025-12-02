@@ -3,11 +3,10 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.io.IOException;
 
 public class GerenciadorDeTarefas {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Scanner join = new Scanner(System.in);
 
@@ -42,6 +41,7 @@ public class GerenciadorDeTarefas {
             // Solicita a opção para interagir com a lista
             System.out.print("Opcao: ");
             opc = join.nextInt();
+            entrada = join.nextLine(); //Limpeza de buffer
 
 
             switch (opc) {
@@ -49,7 +49,8 @@ public class GerenciadorDeTarefas {
                 // Adicionar Tarefa
                 case 1:
                     System.out.print("Nome da Tarefa para adicionar: ");
-                    entrada = join.next();
+                    entrada = join.nextLine();
+
 
                     if (!tarefasPendentes.contains(entrada)) {
 
@@ -124,7 +125,7 @@ public class GerenciadorDeTarefas {
                     }
 
 
-                    // Excluir tarefas
+                // Excluir tarefas
                 case 4:
 
                     System.out.println("1. Tarefas Pendentes");

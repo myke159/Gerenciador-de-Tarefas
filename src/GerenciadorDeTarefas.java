@@ -24,6 +24,7 @@ public class GerenciadorDeTarefas {
         int opc = 0;
         String entrada;
         String confirmar;
+        int entradaNum;
 
 
         /*
@@ -75,7 +76,6 @@ public class GerenciadorDeTarefas {
 
                         System.out.print("Nome ou ID da Tarefa para editar: ");
                         entrada = join.nextLine().toLowerCase();
-                        int entradaNum = Integer.parseInt(entrada) - 1;
 
                         // Editar - Nome
                         if (tarefasPendentes.contains(entrada)) {
@@ -87,12 +87,24 @@ public class GerenciadorDeTarefas {
 
                         // Editar - ID
                             // TODO: Melhorar a tratativa do !Boolean.parseBoolean(tarefasPendentes.get(entradaNum))
-                        } else if (tarefasPendentes.size() > entradaNum){
-                            if (!Boolean.parseBoolean(tarefasPendentes.get(entradaNum))) {
-                                System.out.print("Novo nome da tarefa: ");
-                                String novaEntrada = join.nextLine().toLowerCase();
-                                tarefasPendentes.set(entradaNum, novaEntrada);
-                                System.out.println("Editado com sucesso!");
+                            // TODO: ERROR CRITICO! SÓ FUNCIONA COM ID! -- FIX(Editar-ID) "Corrigido" melhorar!
+                        } else if (!tarefasPendentes.isEmpty()){
+                            try {
+                                entradaNum = Integer.parseInt(entrada) - 1;
+                            } catch (NumberFormatException e) {
+                                entradaNum = -1;
+                            }
+                            if (entradaNum != -1) {
+
+                                if (!Boolean.parseBoolean(tarefasPendentes.get(entradaNum))) {
+                                    System.out.print("Novo nome da tarefa: ");
+                                    String novaEntrada = join.nextLine().toLowerCase();
+                                    tarefasPendentes.set(entradaNum, novaEntrada);
+                                    System.out.println("Editado com sucesso!");
+                                }
+
+                            } else {
+                                System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
                             }
                         } else {
                             System.out.println("ERROR[XXX]: Tarefa NÃO localizada!");
@@ -137,6 +149,7 @@ public class GerenciadorDeTarefas {
 
 
                 // Excluir tarefas
+                    // TODO: Excluir tarefas pelo ID
                 case 4:
 
                     System.out.println("1. Tarefas Pendentes");
@@ -214,6 +227,7 @@ public class GerenciadorDeTarefas {
                     break;
 
                 // Concluir
+                    // TODO: Concluir tarefas pelo ID
                 case 5:
 
                     if (!tarefasPendentes.isEmpty()) {
